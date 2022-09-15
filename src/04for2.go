@@ -6,7 +6,7 @@ import (
 )
 
 // usage:
-// go run .for2.go userinput
+// go run .04for2.go userinput
 func main() {
 	fmt.Println(os.Args) // represented as a slice of strings
 	// first item in the slice is the executable
