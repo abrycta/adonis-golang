@@ -14,32 +14,32 @@ type geometry interface {
 }
 
 /*
-implementing the interface on geometric shapes circle and rectangle
+implementing the interface on geometric shapes Circle and Rectangle
 */
-type rect struct {
+type Rect struct {
 	width, height float64
 }
-type circle struct {
+type Circle struct {
 	radius float64
 }
 
 /*
-Implementation for rectangle
+Implementation for Rectangle
 */
-func (r rect) area() float64 {
+func (r Rect) area() float64 {
 	return r.width * r.height
 }
-func (r rect) perim() float64 {
+func (r Rect) perim() float64 {
 	return 2*r.width + 2*r.height
 }
 
 /*
-Implementation for circle
+Implementation for Circle
 */
-func (c circle) area() float64 {
+func (c Circle) area() float64 {
 	return math.Pi * c.radius * c.radius
 }
-func (c circle) perim() float64 {
+func (c Circle) perim() float64 {
 	return 2 * math.Pi * c.radius
 }
 
@@ -53,11 +53,11 @@ func measure(g geometry) {
 }
 
 /*
-Main method where cirle and rectangle implements the geometry interface as arguments to function measure.
+Main method where Circle and Rectangle implements the geometry interface as arguments to function measure.
 */
 func main() {
-	r := rect{width: 3, height: 4} // input height and width of a rectangle
-	c := circle{radius: 5}         // input radius of a circle
+	r := Rect{width: 3, height: 4} // input height and width of a Rectangle
+	c := Circle{radius: 5}         // input radius of a Circle
 
 	measure(r) // call measure function
 	measure(c)
