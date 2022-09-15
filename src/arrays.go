@@ -28,15 +28,21 @@ func main() {
 	fmt.Println("show:", a)
 
 	a[4] = 1 // assignment
-	fmt.Println("set:", a)
-	fmt.Println("get:", a[4])
-	fmt.Println("length:", len(a))
+	fmt.Println("set: ", a)
+	fmt.Println("get element at index 4: ", a[4])
+
+	// iterate through every element of the array
+	for i, e := range a {
+		fmt.Println("index: ", i, " element: ", e)
+	}
+	fmt.Println("length: ", len(a))
 
 	// array initializer expression
 	b := [5]int{1, 2, 3, 4, 5} // assign b to an array literal
 	fmt.Println("values:", b)
 
 	// 2d-array demonstration
+	// array initializer expression
 	twoD := [2][3]int{
 		{2, 3, 4},
 		{5, 6, 7},
@@ -50,5 +56,5 @@ func main() {
 			twoD[i][j] = twoD[i][j] + i
 		}
 	}
-	fmt.Println("2d example: ", twoD)
+	fmt.Println("after iterating: ", twoD)
 }
