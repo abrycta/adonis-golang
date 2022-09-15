@@ -47,8 +47,8 @@ func (c circle) perim() float64 {
 calling methods in named interface
 */
 func measure(g geometry) {
-	fmt.Println(g) // prints the inserted values
-	fmt.Println(g.area()) // prints the area of the geometric shape
+	fmt.Println(g)         // prints the inserted values
+	fmt.Println(g.area())  // prints the area of the geometric shape
 	fmt.Println(g.perim()) // prints the perimeter of the geometric shape
 }
 
@@ -59,6 +59,6 @@ func main() {
 	r := rect{width: 3, height: 4} // input height and width of a rectangle
 	c := circle{radius: 5}         // input radius of a circle
 
-	measure(r) call measure function
+	measure(r) // call measure function
 	measure(c)
 }
