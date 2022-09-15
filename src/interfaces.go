@@ -8,7 +8,7 @@ import (
 /*
 interface for geometric shapes
 */
-type geometry interface {
+type Geometry interface {
 	area() float64
 	perim() float64
 }
@@ -46,14 +46,14 @@ func (c Circle) perim() float64 {
 /*
 calling methods in named interface
 */
-func measure(g geometry) {
+func measure(g Geometry) {
 	fmt.Println(g)         // prints the inserted values
 	fmt.Println(g.area())  // prints the area of the geometric shape
 	fmt.Println(g.perim()) // prints the perimeter of the geometric shape
 }
 
 /*
-Main method where Circle and Rectangle implements the geometry interface as arguments to function measure.
+Main method where Circle and Rectangle implements the Geometry interface as arguments to function measure.
 */
 func main() {
 	r := Rect{width: 3, height: 4} // input height and width of a Rectangle
