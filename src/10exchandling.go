@@ -6,50 +6,24 @@ import (
 	"os"
 )
 
-func errorfunc(arg int) (int, error) { // for error declaration
-	if arg == 10 {
-		return -1, errors.New("Error occurred.")
+func quotientMod(numerator, denominator int) (int, int, error) {
+	if denominator == 0 {
+		return 0, 0, errors.New("denominator is 0")
 	}
-	return arg, nil
-}
-
-func create(p string) *os.File { // creating file (defer)
-	fmt.Println("Creating (deferred function) ")
-	f, _ := os.Create(p)
-	return f
-}
-
-func close(f *os.File) { // closing file (defer)
-	fmt.Println("Closing (deferred function) ")
-}
-
-func panicfunc() { // panic function
-	panic("a problem")
+	return numerator / denominator, numerator % denominator, nil
 }
 
 func main() {
+	numerator := 20
+	denominator := 0
+	quotient, mod, err := quotientMod(numerator, denominator)
 
-	for _, i := range []int{4, 10} { // error function
-		if r, e := errorfunc(i); e != nil {
-			fmt.Println("function failed:", e) // returns an error
-		} else {
-			fmt.Println("function worked:", r) // returns a value under 10
-		}
+	// err is now declared as a variable
+	// it will be a compile-time error to not utilize the variable
+	// go forces you to handle errors gracefully
+	if err != nil { // block is executed when denominator is 0
+		fmt.Println(err) // outputs "denominator is 0" to the console
+		os.Exit(1)
 	}
-
-	f := create("tmp/defer.txt") // to call a deferred function
-	defer close(f)               // to execute a close deferred function
-
-	_, prob := os.Create("/tmp/file") // creating an error
-	if prob != nil {
-		panic(prob)
-	}
-	panic("problem occurred") // panic function
-
-	defer func() { // recover function
-		if r := recover(); r != nil {
-			fmt.Println("Recovered error:\n ", r)
-		}
-	}()
-	panicfunc()
+	fmt.Println("quotient:", quotient, "mod:", mod)
 }
