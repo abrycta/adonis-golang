@@ -2,7 +2,8 @@ package main
 
 import "fmt"
 
-// demonstration of receiver functions
+// demonstration of receiver functions,
+// receiver functions = methods
 // similar to instance methods:
 // CarInstance.startEngine()
 // We use 'rect' here because 'Rect' has already been
@@ -27,7 +28,7 @@ func main() {
 	fmt.Println("area: ", r.area())
 	fmt.Println("perim:", r.perim())
 
-	//use pointer receiver to avoid copying on method calls
+	//use pointer receiver to avoid copying values on method calls
 	rp := &r
 	fmt.Println("area: ", rp.area())
 	fmt.Println("perim:", rp.perim())

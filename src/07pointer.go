@@ -2,7 +2,8 @@ package main
 
 import "fmt"
 
-// function that increments a variable that its argument points to and returns the new value of of the variable
+// function that increments a variable that its argument points to and returns the pointer
+// of the manipulated variable
 func incr(a *int) int {
 	*a++
 	return *a
