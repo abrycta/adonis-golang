@@ -2,11 +2,16 @@ package main
 
 import "fmt"
 
-//method that has a receiver type of *rect
+// demonstration of receiver functions
+// similar to instance methods:
+// CarInstance.startEngine()
+// We use 'rect' here because 'Rect' has already been
+// declared in the same package
 type rect struct {
 	width, height int
 }
 
+// method that has a receiver type of *rect
 func (r *rect) area() int {
 	return r.width * r.height
 }
