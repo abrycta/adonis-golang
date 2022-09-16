@@ -6,7 +6,6 @@ var l int = 24 // full variable declaration syntax at package level
 const CONSTANTINT = 666
 
 func main() {
-
 	// alternative forms
 	// var i = 0
 	// var i int = 0
