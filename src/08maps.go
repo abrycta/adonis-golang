@@ -34,4 +34,11 @@ func main() {
 		or
 		ages["bob"]++
 	*/
+	fmt.Println(ages["bob"])
+	/* But a map element is not a variable, and we cannot take its address:
+
+	_=&ages["bob"] // compile error: cannot take address of map element
+
+	*/
+
 }
