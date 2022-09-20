@@ -25,21 +25,28 @@ func main() {
 	// to default values, that is all elements are filled with 0
 	// because the default value of int is 0
 
-	fmt.Println("show:", a)
+	fmt.Println("show:", a) //show: [0 0 0 0 0]
 
-	a[4] = 1 // assignment
-	fmt.Println("set: ", a)
-	fmt.Println("get element at index 4: ", a[4])
+	a[4] = 1                                      // assignment
+	fmt.Println("set: ", a)                       //set:  [0 0 0 0 1]
+	fmt.Println("get element at index 4: ", a[4]) //get element at index 4:  1
 
 	// iterate through every element of the array
 	for i, e := range a {
 		fmt.Println("index: ", i, " element: ", e)
 	}
-	fmt.Println("length: ", len(a))
+	/*
+		index:  0  element:  0
+		index:  1  element:  0
+		index:  2  element:  0
+		index:  3  element:  0
+		index:  4  element:  1
+	*/
+	fmt.Println("length: ", len(a)) //length:  5
 
 	// array initializer expression
 	b := [5]int{1, 2, 3, 4, 5} // assign b to an array literal
-	fmt.Println("values:", b)
+	fmt.Println("values:", b)  // values: [1 2 3 4 5]
 
 	// 2d-array demonstration
 	// array initializer expression
@@ -48,13 +55,12 @@ func main() {
 		{5, 6, 7},
 	}
 
-	fmt.Println("before: ", twoD)
-
+	fmt.Println("before: ", twoD) // values: [1 2 3 4 5]
 	// add the rowIndex to the current element
 	for i := 0; i < 2; i++ {
 		for j := 0; j < 3; j++ {
 			twoD[i][j] = twoD[i][j] + i
 		}
 	}
-	fmt.Println("after iterating: ", twoD)
+	fmt.Println("after iterating: ", twoD) // values: [1 2 3 4 5]
 }

@@ -28,7 +28,7 @@ func main() {
 	for _, s := range summer {
 		for _, q := range Q2 {
 			if s == q {
-				fmt.Printf("%s appears in both\n", s)
+				fmt.Printf("%s appears in both\n", s) // June appears in both
 			}
 		}
 	}
