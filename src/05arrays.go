@@ -55,12 +55,13 @@ func main() {
 		{5, 6, 7},
 	}
 
-	fmt.Println("before: ", twoD) // values: [1 2 3 4 5]
+	fmt.Println("before: ", twoD) // before:  [[2 3 4] [5 6 7]]
 	// add the rowIndex to the current element
 	for i := 0; i < 2; i++ {
 		for j := 0; j < 3; j++ {
 			twoD[i][j] = twoD[i][j] + i
 		}
 	}
-	fmt.Println("after iterating: ", twoD) // values: [1 2 3 4 5]
+	fmt.Println("after iterating: ", twoD) // after iterating:  [[2 3 4] [6 7 8]]
+
 }
